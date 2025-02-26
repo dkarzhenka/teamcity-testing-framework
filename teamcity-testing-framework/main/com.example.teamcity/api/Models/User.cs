@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using RandomAttribute = teamcity_testing_framework.main.com.example.teamcity.api.Attributes.RandomAttribute;
 
 namespace teamcity_testing_framework.main.com.example.teamcity.api.Models
-{
-    public record User(
-    [Required] 
-    string Login,
-    [Required] 
-    string Password
-);
+{  
+    public class User : BaseModel
+    {
+        [Random]
+        public string? Username { get; set; }
+        [Random]
+        public string? Password { get; set; }
+    }
 }
